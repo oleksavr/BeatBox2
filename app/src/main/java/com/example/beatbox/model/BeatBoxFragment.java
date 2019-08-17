@@ -29,6 +29,6 @@ public class BeatBoxFragment extends Fragment {
 
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),3));
 
-        return binding.getRoot();  //binding
+        return binding.getRoot();
     }
 }
