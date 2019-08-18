@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style parent="Theme.AppCompat.Light" name="RaisedButtonGreen">
+        <item name="colorButtonNormal">#68BD2D</item>
+        <item name="colorControlHighlight">#dddd</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>
