@@ -15,6 +15,9 @@ import com.example.beatbox.R;
 import com.example.beatbox.databinding.FragmentBeatBoxBinding;
 import com.example.beatbox.databinding.ListItemSoundBinding;
 import com.example.beatbox.sounds.BeatBox;
+import com.example.beatbox.sounds.Sound;
+
+import java.util.List;
 
 public class BeatBoxFragment extends Fragment {
 
@@ -40,7 +43,7 @@ public class BeatBoxFragment extends Fragment {
                 .inflate(inflater, R.layout.fragment_beat_box, container, false);
 
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        binding.recyclerView.setAdapter(new SoundAdapter());
+        binding.recyclerView.setAdapter(new SoundAdapter(mBeatBox.getSound()));
 
         return binding.getRoot(); //binging
     }
@@ -55,6 +58,12 @@ public class BeatBoxFragment extends Fragment {
     }
 
     private class SoundAdapter extends RecyclerView.Adapter<SoundHolder>{
+
+        private List<Sound> mSound;
+
+        public SoundAdapter(List<Sound> sounds){
+            mSound = sounds;
+        }
 
         @NonNull
         @Override
@@ -72,7 +81,7 @@ public class BeatBoxFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return 0;
+            return mSound.size();
         }
     }
 }
